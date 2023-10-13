@@ -1,4 +1,8 @@
-// 
+// Topic Array
+// Problem Link https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1
+// Solution
+// Time Complexity 0(n)
+// Space Complexity O(1)
 pair<long long, long long> getMinMax(long long a[], int n) {
     long long int mn=a[0];
     long long int mx=a[0];
