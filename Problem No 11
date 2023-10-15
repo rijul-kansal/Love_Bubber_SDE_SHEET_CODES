@@ -1,0 +1,25 @@
+// find duplicate in an array of N+1 Integers
+// Topic Array
+// Question Link https://github.com/rijul-kansal/Love_Bubber_SDE_SHEET_CODES/new/main
+// Solution
+// Time Complexity O(n)
+// Space Complexity O(1)
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        for(int i=0;i<n;i++)
+        {
+            int x=abs(nums[i]);
+            if(nums[x-1]<0)
+            {
+                return x;
+            }
+            else
+            {
+                nums[x-1]=-nums[x-1];
+            }
+        }
+        return 0;
+    }
+};
