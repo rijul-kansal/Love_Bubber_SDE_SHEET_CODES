@@ -1,0 +1,42 @@
+// find Largest sum contiguous Subarray [V. IMP]
+// Topiic Array
+// Question link https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1
+// Solution
+// Time Complexity o(n)
+// Space Complexity O(1)
+long long maxSubarraySum(int arr[], int n){
+     long long int ans=INT_MIN;
+     long long int c=0;
+     int flag=0;
+     int mn=INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+       mn=max(mn,arr[i]); 
+       if(arr[i]<0)
+       {
+           if(c+arr[i]<0)
+           {
+               ans=max(ans,c);
+               c=0;
+           }
+           else
+           {
+               c+=arr[i];
+              
+           }
+       }
+       else
+       {
+           flag=1;
+           c+=arr[i];
+       }
+        ans=max(ans,c);
+    }
+    ans=max(ans,c);
+    if(flag==0)
+    {
+        ans=mn;
+    }
+    return ans;
+    
+}
