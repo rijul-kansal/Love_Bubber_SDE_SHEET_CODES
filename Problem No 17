@@ -1,0 +1,27 @@
+// Best time to buy and sell stockes
+// Topic Array
+// Question link https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+// Solution 
+// Time Complexity O(n)
+// Space Coomplexity O(1)
+class Solution {
+public:
+    int maxProfit(vector<int>& arr) {
+        int mn=arr[0];
+        int idx=0;
+        int n=arr.size();
+        int ans=0;
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]>mn)
+            {
+                ans=max(ans,arr[i]-mn);
+            }
+            else
+            {
+                mn=arr[i];
+            }
+        }
+        return ans;
+    }
+};
