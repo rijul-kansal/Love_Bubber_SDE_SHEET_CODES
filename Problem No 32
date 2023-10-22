@@ -1,0 +1,18 @@
+/*
+Three way partitioning of an array around a given value
+Topic Array
+Question Link https://practice.geeksforgeeks.org/problems/three-way-partitioning/1
+Time complexity O(nLogn)
+Space Complexity O(1)
+*/
+
+
+class Solution{   
+public:
+    //Function to partition the array around the range such 
+    //that array is divided into three parts.
+    void threeWayPartition(vector<int>& arr,int a, int b)
+    {
+        sort(arr.begin(),arr.end());
+    }
+};
