@@ -1,0 +1,35 @@
+/*
+Smallest Subarray with sum greater than a given value
+Topic Array
+Question Link https://practice.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1
+Time Complexity O(n)
+Space Complexity O(1)
+*/
+class Solution{
+  public:
+
+    int smallestSubWithSum(int arr[], int n, int x)
+    {
+       int ans=n;
+       int i=0;
+       int sum=0;
+       int j=0;
+       while(i<n)
+       {
+           sum+=arr[i];
+           if(sum>x)
+           {
+               while(sum>x)
+               {
+                   if(sum-arr[j]>x)
+                   sum-=arr[j++];
+                   else break;
+               }
+               ans=min(ans,i-j+1);
+           }
+           i++;
+       }
+       if(sum<x) return 0;
+       return ans;
+    }
+};
