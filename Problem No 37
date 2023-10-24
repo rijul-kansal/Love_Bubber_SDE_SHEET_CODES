@@ -1,0 +1,61 @@
+/*
+Spiral traversal on a Matrix
+Topic Matrix
+Question link https://leetcode.com/problems/spiral-matrix/description/
+Time Complexity O(m*n)
+Space Complexity O(n)
+*/
+
+class Solution
+{
+public:
+    vector<int> spiralOrder(vector<vector<int>> &nums)
+    {
+        int m = nums.size();
+        int n = nums[0].size();
+        vector<int> res;
+        int ir = 0;
+        int iu=0;
+        int total=m*n;
+        while (m && n)
+        {
+            // m=3
+            // n=4
+            int id = n - 1;
+            int ib = m - 1;
+            if(total==res.size()) break;
+            for (int i = ir; i < n; i++)
+            {
+                res.push_back(nums[ir][i]);
+                cout<<ir<<i<<" ";
+                 if(total==res.size()) break;
+            }
+             if(total==res.size()) break;
+            for (int i = ir + 1; i < m; i++)
+            {
+                res.push_back(nums[i][id]);
+                cout<<i<<id<<" ";
+                 if(total==res.size()) break;
+            }
+             if(total==res.size()) break;
+            for (int i = id - 1; i >= ir; i--)
+            {
+                res.push_back(nums[m - 1][i]);
+                cout<<m-1<<i<<" ";
+                 if(total==res.size()) break;
+            }
+             if(total==res.size()) break;
+            for (int i = m-2; i>=ir+1; i--)
+            {
+                res.push_back(nums[i][iu]);
+                cout<<i<<iu<<" ";
+                 if(total==res.size()) break;
+            }
+            ir++;
+            n--;
+            m--;
+            iu++;
+                    }           
+        return res;
+    }
+};
